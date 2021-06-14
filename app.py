@@ -3,6 +3,7 @@ import csv
 import io
 import pandas as pd
 import mysql.connector as db
+import base64
 
 app = Flask(__name__)  
  
@@ -28,7 +29,7 @@ def success():
         for row in reader:
             data.append(row)
         data=pd.DataFrame(data)
-        print(data)
+        #print(data)
 
         #CONNECTING TO MYSQL DATABASE SERVER...
         connection=db.connect(host='localhost',
@@ -49,7 +50,17 @@ def success():
         names=[]
         for x in range(len(data.columns)):
             names.append(data[x][0])
-        print(names)
+        #print(names)
+
+        idx = pd.Index(["%s"%name for name in names])
+        #print(idx)
+        
+        #ENCODING PASSWORDS IF PASSWORD DATAS ARE PRESENT IN THE FILE..
+        if "password" in names:
+            pos=idx.get_loc('password')
+            for x in range(1,len(data.index)):
+                pwd=base64.b64encode(data[pos][x].encode("utf-8"))
+                data.at[pos,x]=pwd
 
         #DYNAMICALLY CREATING TABLE...
         '''sql = """CREATE TABLE %s"""%f1[:-4] +"(\n" +",\n".join([("%s varchar(255)"%name.replace(" ","")) for name in names])+ "\n);"

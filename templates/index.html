@@ -1,11 +1,32 @@
+<!DOCTYPE html>
 <html>  
-<head>  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>upload</title>  
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>  
 <body>  
-    <form action = "/success" method = "post" enctype="multipart/form-data">  
+    <!--<form action = "/success" method = "post" enctype="multipart/form-data">  
         <input type="file" name="file" accept=".csv"/>  
         <input type = "submit" value="Upload">  
-    </form>  
+    </form> -->
+    <header>
+        <a href="#000" class="logo">GROOTAN</a>
+    </header>
+    <section class="banner" id="000">
+        <div class="textBx">
+            <h2>Hello, World!<br><span>Drop Your CSV here...</span></h2>
+            <form action = "/success" method = "post" enctype="multipart/form-data">  
+                <input type="file" name="file" accept=".csv" class="custom-file-input btn1"/>
+                <div class="upbtn">
+                    <input type = "submit" value="Upload" class="btn">  
+                </div>
+            </form>
+        </div>
+    </section>
 </body>  
 </html>  
