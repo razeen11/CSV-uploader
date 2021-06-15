@@ -85,4 +85,4 @@ def success():
         return render_template("success.html", name = f1[:-4], count = cnt)  
     return redirect(url_for('upload'))
 if __name__ == '__main__':  
-    app.run(debug = False,host='0.0.0.0')  
+    app.run(debug = True)  
