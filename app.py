@@ -63,12 +63,12 @@ def success():
                 data.at[pos,x]=pwd
 
         #DYNAMICALLY CREATING TABLE...
-        '''sql = """CREATE TABLE %s"""%f1[:-4] +"(\n" +",\n".join([("%s varchar(255)"%name.replace(" ","")) for name in names])+ "\n);"
+        sql = """CREATE TABLE %s"""%f1[:-4] +"(\n" +",\n".join([("%s varchar(255)"%name.replace(" ","")) for name in names])+ "\n);"
         print(sql)
-        cursor.execute(sql)'''
+        cursor.execute(sql)
         
         #INSERTING ELEMENTS TO TABLE...
-        '''ele=[]
+        ele=[]
         for x in range(1,len(data.index)):
             ele.clear()
             for y in range(0,len(data.columns)):
@@ -76,7 +76,7 @@ def success():
             sql_insert="INSERT INTO %s"%f1[:-4]+" ("+",".join([("%s"%name.replace(" ","")) for name in names])+")"+ " VALUES ("+",".join([("'%s'"%elem) for elem in ele])+");"
             print(sql_insert)
             cursor.execute(sql_insert)
-            connection.commit()'''
+            connection.commit()
 
         #NUMBER OF RECORDS...
         cnt=data.shape[0]
