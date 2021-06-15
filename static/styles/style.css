@@ -201,3 +201,96 @@ header .logo:before{
 .bbtn:active{
     opacity: 0.6;
 }
+
+/* responsive */
+@media (max-width: 991px)
+{
+    header{
+        padding: 20px 50px;
+        z-index: 1000;
+    }
+    .banner{
+        align-items: flex-start;
+    }
+    section{
+        padding: 100px 50px;
+    }
+    .banner{
+        padding: 150px 50px 100px;
+    }
+    .banner h2{
+        font-size: 1.5em;
+    }
+    .banner h3{
+        font-size: 1em;
+    }
+    .btn{
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .btn1{
+        margin-top: 12%;
+    }
+    .bbtn{
+        margin-top: 30%;
+        margin-left: 35px;
+        
+    }
+    .banner p{
+        font-size: 1.5em;
+        font-weight: 500;
+        line-height: 1.5em; 
+    }
+    .banner #cnt{
+        top: 75%;
+        left: 98%;
+    }
+    #myProgress{
+        top: 25%;
+        width: 38%;
+    }
+}
+@media (max-width: 720px)
+{
+    header{
+        padding: 20px 20px;
+    }
+    .btn{
+        border-radius: 10px;
+        left: 47%;
+        bottom: 10%;
+    }
+    .btn1{
+        margin-top: 12%;
+    }
+    .bbtn{
+        margin-top: 70%;
+        margin-left: 56%;
+    }
+    .banner{
+        padding: 150px 20px 100px;
+    }
+    .banner p{
+        font-size: 1.5em;
+        font-weight: 500;
+        line-height: 1.5em; 
+    }
+    .banner #cnt{
+        top: 75%;
+        left: 98%;
+    }
+    section{
+        padding: 100px 250px;
+    }    
+    .textBx{
+        position: relative;
+        bottom: 20px;
+        margin-top: 25%;
+    }
+    #myProgress{
+        top: 48%;
+        width: 91.5%;
+    }
+    
+}
