@@ -1,7 +1,7 @@
 <h1 align="center"> CSV_UPLOADER </h1>
 <h3 align="center">A simple application using flask to export CSV into database</h3>
 <p align="center"><img width="530" alt="portfolio" src="https://user-images.githubusercontent.com/66989734/121997508-1ab2a280-cdc8-11eb-8656-268a80746874.png"></p>
-<p>(Use data.csv given in the repository to check demo)</p>
+<p>(Use data.csv given in the repository with different name to check demo)</p>
 <h3>👉<a href="http://razeen11.pythonanywhere.com/" target="_blank">CLICK HERE FOR LIVE DEMO</a></h3>
 
 <h2>DESCRIPTION </h2>
@@ -25,5 +25,5 @@
   <li>MySQL</li>
 </ul>
   
- <p>(Use data.csv given in the repository to check demo)</p>
+ <p>(Use data.csv given in the repository with different name to check demo)</p>
 <h3>👉<a href="http://razeen11.pythonanywhere.com/" target="_blank">CLICK HERE FOR LIVE DEMO</a></h3>
