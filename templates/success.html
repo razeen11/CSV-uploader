@@ -1,9 +1,74 @@
 <html>  
 <head>  
-<title>success</title>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>progress</title>  
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
 </head>  
-<body>  
-<p>File uploaded successfully</p>  
-<p>File Name: {{name}}</p>  
+<body onload=move()>  
+    <header>
+        <a href="#000" class="logo">GROOTAN</a>
+    </header>
+    <section class="banner" id="000">
+        <div class="textBx">
+            <h2>File uploaded successfully</h2> <br>
+            <p>File Name : {{name}}</p>
+            <p>No. of records processed : </p>
+            <p id="cnt">{{count}}</p> 
+        </div>
+        <div id="myProgress">
+            <div id="myBar" class="cnter"></div>
+        </div>
+        <a href="{{ url_for('upload') }}" class="bbtn" style="text-align: center;">
+            Back to home
+        </a>
+
+        <script type="text/javascript">
+            var i = 0;
+            var bbtn = document.getElementsByClassName("bbtn")[0];
+            function move() {
+            if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("myBar");
+                var width = 1;
+                var id = setInterval(frame, '{{count}}'*3.33333);
+                function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    i = 0;
+                    bbtn.style.display="block";
+                } else {
+                    width++;
+                    elem.style.width = width + "%";
+                }
+                }
+            }
+            }
+        </script>
+
+        <script type="text/javascript">
+            function animateValue(id,start,end,duration) {
+                var bbtn = document.getElementsByClassName("bbtn")[0];
+                if (start === end) return;
+                var range = end - start;
+                var current = start;
+                var increment = end > start? 1 : -1;
+                var stepTime = Math.abs(Math.floor(duration / range));
+                var obj = document.getElementById(id);
+                var timer = setInterval(function() {
+                    current += increment;
+                    obj.innerHTML = current;
+                    if (current == end) {
+                        clearInterval(timer);
+                        bbtn.style.display="block";
+                    }
+                }, stepTime);
+            }
+            animateValue('cnt',0,'{{count}}',5000);
+        </script>
+    </section>
 </body>  
 </html>  

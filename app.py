@@ -78,7 +78,11 @@ def success():
             cursor.execute(sql_insert)
             connection.commit()'''
 
+        #NUMBER OF RECORDS...
+        cnt=data.shape[0]
 
-        return render_template("success.html", name = f1[:-4])  
+
+        return render_template("success.html", name = f1[:-4], count = cnt)  
+    return redirect(url_for('upload'))
 if __name__ == '__main__':  
     app.run(debug = True)  
