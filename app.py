@@ -63,7 +63,7 @@ def success():
                 data.at[pos,x]=pwd
 
         #DYNAMICALLY CREATING TABLE...
-        sql = """CREATE TABLE %s"""%f1[:-4] +"(\n" +",\n".join([("%s varchar(255)"%name.replace(" ","")) for name in names])+ "\n);"
+        sql = """CREATE TABLE %s"""%f1[:-4].replace(" ","") +"(\n" +",\n".join([("%s varchar(255)"%name.replace(" ","")) for name in names])+ "\n);"
         print(sql)
         cursor.execute(sql)
         
