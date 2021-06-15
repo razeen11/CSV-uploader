@@ -16,8 +16,12 @@
 <h2>BACK-END </h2>
 <ul>
   <li>FLASK</li>
-  <li>MySQL</li>
   <li>JAVASCRIPT</li>
 </ul>
 
+<h2>DATABASE </h2>
+<ul>
+  <li>MySQL</li>
+</ul>
+  
 <h3>👉<a href="http://razeen11.pythonanywhere.com/" target="_blank">CLICK HERE FOR LIVE DEMO</a></h3>
