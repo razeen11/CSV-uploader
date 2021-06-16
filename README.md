@@ -23,6 +23,19 @@
 <ul>
   <li>MySQL</li>
 </ul>
+
+<h2>ARCHITECTURE </h2>
+
+csv-uploader
+
+├── templates        # HTML files
+
+├── static          # Stylesheets
+
+├── app.py         # Flask app
+
+└── ...
+
   <hr>
 <h4>UNDER RECTIFICATION...</h4>
 <ul>
